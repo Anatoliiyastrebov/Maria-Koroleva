@@ -1,0 +1,190 @@
+.landing {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(155,94,154,0.07) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.landing::after {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: -150px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(155,94,154,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ── Header ── */
+.landing-header {
+  padding: 0 40px;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245,245,247,0.82);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-link:hover .header-logo {
+  opacity: 0.8;
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
+  transition: opacity 0.2s ease;
+}
+
+/* ── Hero ── */
+.landing-content {
+  flex: 1;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 64px 40px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.landing-hero {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.landing-title {
+  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0 0 20px 0;
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.landing-name {
+  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 24px 0;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  animation: fadeIn 0.5s ease-out 0.08s both;
+}
+
+.landing-description {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0 auto 32px;
+  max-width: 520px;
+  animation: fadeIn 0.5s ease-out 0.16s both;
+}
+
+.landing-signature {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--accent);
+  font-weight: 500;
+  animation: fadeIn 0.5s ease-out 0.24s both;
+}
+
+.landing-signature::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--accent-light);
+  border-radius: 1px;
+}
+
+.landing-signature::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--accent-light);
+  border-radius: 1px;
+}
+
+/* ── Cards grid ── */
+.questionnaires-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  animation: fadeIn 0.5s ease-out 0.3s both;
+}
+
+.questionnaires-grid > *:nth-child(1) { animation: scaleIn 0.4s ease-out 0.32s both; }
+.questionnaires-grid > *:nth-child(2) { animation: scaleIn 0.4s ease-out 0.40s both; }
+.questionnaires-grid > *:nth-child(3) { animation: scaleIn 0.4s ease-out 0.48s both; }
+.questionnaires-grid > *:nth-child(4) { animation: scaleIn 0.4s ease-out 0.56s both; }
+
+/* ── Footer ── */
+.landing-footer {
+  padding: 24px 40px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
+}
+
+.impressum-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.impressum-link:hover {
+  color: var(--accent);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .landing-header { padding: 0 20px; }
+  .landing-content { padding: 48px 20px 32px; }
+  .landing-name { font-size: 38px; letter-spacing: -1px; }
+  .landing-description { font-size: 16px; }
+  .questionnaires-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .landing-footer { padding: 20px; }
+}
+
+@media (max-width: 480px) {
+  .landing-name { font-size: 30px; }
+  .questionnaires-grid { grid-template-columns: 1fr; }
+  .header-logo { height: 32px; }
+}

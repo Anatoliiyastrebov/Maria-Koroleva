@@ -1,0 +1,104 @@
+.impressum-page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.impressum-header {
+  padding: 0 40px;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245,245,247,0.82);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-link:hover .header-logo { opacity: 0.75; }
+
+.header-logo {
+  height: 38px;
+  width: auto;
+  transition: opacity 0.2s ease;
+}
+
+.impressum-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.impressum-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 56px 40px 80px;
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.impressum-content h1 {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 48px 0;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+.impressum-section {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  padding: 28px 32px;
+  margin-bottom: 16px;
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.impressum-section h2 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 14px 0;
+}
+
+.impressum-section p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 8px 0;
+}
+
+.impressum-section p:first-of-type { color: var(--text); }
+
+.impressum-section strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.impressum-section a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.impressum-section a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .impressum-header { padding: 0 20px; }
+  .impressum-content { padding: 40px 20px 60px; }
+  .impressum-content h1 { font-size: 28px; }
+  .impressum-section { padding: 22px 20px; }
+}
